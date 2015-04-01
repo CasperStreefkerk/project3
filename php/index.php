@@ -37,12 +37,12 @@
             <a class="navbar-brand" href="index.php">Heartbeat</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
+            <form class="navbar-form navbar-right" action="functions/checklogin.php" method="POST">
                 <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
+                    <input type="text" placeholder="Email" id="email"  name="email" class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="Wachtwoord" class="form-control">
+                    <input type="password" placeholder="Wachtwoord" id="password" name="password" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-success">Log in</button>
                 <a href="register.php" class="btn btn-success">Registreer</a>
