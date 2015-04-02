@@ -1,13 +1,13 @@
 <?php
 session_start();
-include('Database.php');
+
 
 $email = $_POST['email'];
 $pass = md5($_POST['password']);
 
 $query = "SELECT * FROM user WHERE email='$email' AND password='$pass'";
 
-if(mysql_query($query))
+if(mysqli_query($query))
 {
     while(($row = mysql_fetch_assoc($query)) != NULL) {
         if($row['type'] == '1'){
@@ -37,8 +37,8 @@ if(mysql_query($query))
 
     }
 
-    header('Location:index.php');
-    $_SESSION['myusername'] = $email;
+    //header('Location:index.php');
+    //$_SESSION['myusername'] = $email;
 }
 else
 {
