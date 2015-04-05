@@ -1,3 +1,22 @@
+<?php
+require_once("settings.php");
+
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_DATABASE);
+
+$markerQuery = "SELECT * FROM markers";
+$retrieveMarkers = mysqli_query($conn, $markerQuery);
+
+while($result = mysqli_fetch_assoc($retrieveMarkers)){
+    $searchRows[] = $result;
+    echo "hoi";
+}
+
+// testing
+print_r($searchRows);
+echo $searchRows[0]['plaatsnaam'];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
