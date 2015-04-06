@@ -45,7 +45,7 @@
                     <input type="password" placeholder="Wachtwoord" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-success">Log in</button>
-                <a href="register.php" class="btn btn-success">Registreer</a>
+                <a href="../register.php" class="btn btn-success">Registreer</a>
             </form>
         </div><!--/.navbar-collapse -->
     </div>

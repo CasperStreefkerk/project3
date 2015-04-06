@@ -57,13 +57,66 @@ class DatabaseSelector extends Database
         return $statement->fetch();
     }
 
-    public function registerUser($email, $password)
+    public function registerUser($email, $password, $usertype)
 
     {
-        $statement = $this->connection->prepare('INSERT INTO users(email, password) VALUES (:email,:password)');
+        $statement = $this->connection->prepare('INSERT INTO user(email, password, type) VALUES (:email,:password, :usertype)');
         $statement->execute(array(
             ':email' => $email,
-            ':password' => md5($password)
+            ':password' => md5($password),
+            'type' => $usertype
+        ));
+        $test = $this->connection->lastInsertID();
+        return($test);
+
+
+    }
+
+    public function registerUsers($lastid, $firstname, $lastname, $address, $place, $zipcode)
+
+    {
+        $statement = $this->connection->prepare('INSERT INTO users(user_id, firstname, lastname, address,place, zipcode) VALUES (:user_id, :firstname,:lastname,:address,:place,:zipcode)');
+        $statement->execute(array(
+            ':user_id' => $lastid,
+            ':firstname' => $firstname,
+            ':lastname' => $lastname,
+            ':address' => $address,
+            ':place' => $place,
+            ':zipcode' => $zipcode
+        ));
+
+
+    }
+
+    public function registerArtist($lastid, $name, $management, $contactperson_fn, $contactperson_ln, $phonenumber)
+
+    {
+        $statement = $this->connection->prepare('INSERT INTO artists(artist_id, name, management, contactperson_firstname, contactperson_lastname, phonenumber) VALUES (:last_id, :name, :management, :contactperson_firstname, :contactperson_lastname, :phonenumber)');
+        $statement->execute(array(
+            ':last_id' => $lastid,
+            ':name' => $name,
+            ':management' => $management,
+            ':contactperson_firstname' => $contactperson_fn,
+            ':contactperson_lastname' => $contactperson_ln,
+            ':phonenumber' => $phonenumber
+
+        ));
+
+
+    }
+
+    public function registerSponsor($lastid, $companyname, $contactperson_fn, $contactperson_ln, $address, $place, $zipcode)
+
+    {
+        $statement = $this->connection->prepare('INSERT INTO sponsors(sponsor_id, companyname, contactperson_firstname, contactperson_lastname, address, place, zipcode) VALUES (:last_id,:companyname,:contactperson_firstname, :contactperson_lastname,:address,:place,:zipcode)');
+        $statement->execute(array(
+            ':email' => $lastid,
+            ':companyname' => $companyname,
+            ':contactperson_firstname' => $contactperson_fn,
+            ':contactperson_lastname' => $contactperson_ln,
+            ':address' => $address,
+            ':place' => $place,
+            ':zipcode' => $zipcode
         ));
 
 

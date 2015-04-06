@@ -24,6 +24,7 @@ try {
 
 
     require_once "ini/ini-index.php";
+    require_once "ini/ini-register.php";
 
 
 

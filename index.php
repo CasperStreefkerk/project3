@@ -25,9 +25,9 @@ include_once('header.php');
                 <div class="form-group">
                     <input type="password" placeholder="Wachtwoord" id="password" name="password" class="form-control">
                 </div>
-                <!--- <button type="submit" name="submitLogin" class="btn btn-success">Log in</button>-->
-                <input type="submit" name="submitLogin" value="Log in" />
-                <a href="php/register.php" class="btn btn-success">Registreer</a>
+                 <button type="submit" name="submitLogin" class="btn btn-success">Log in</button>
+               <!--- <input type="submit" name="submitLogin" value="Log in" /> -->
+                <a href="register.php" class="btn btn-success">Registreer</a>
             </form>
 
 
@@ -50,7 +50,7 @@ include_once('header.php');
     <div class="container">
         <h1>Welkom bij ons project!</h1>
         <p>Ons project is super mooi. Koop ons product nu voor maar 5 euro.</p>
-        <p><a class="btn btn-primary btn-lg" href="php/register.php" role="button">Registreer nu! &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" href="register.php" role="button">Registreer nu! &raquo;</a></p>
     </div>
 </div>
 
