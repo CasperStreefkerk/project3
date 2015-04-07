@@ -37,7 +37,7 @@ function setMarkers(data) {
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
     // Dit zorgt er voor dat er een marker wordt geplaatst wanneer er op de map wordt geklikt.
-    google.maps.event.addListener(map, "click", function(e){
+    google.maps.event.addListener(map, "click", function (e) {
         console.log("Marker Created!");
         var latitude = e.latLng.lat();
         var longitude = e.latLng.lng();
@@ -48,17 +48,19 @@ function setMarkers(data) {
             editable: true,
             animation: google.maps.Animation.DROP
         });
-        console.log( latitude + ', ' + longitude );
+        console.log(latitude + ', ' + longitude);
 
         // Center of map
-        map.panTo(new google.maps.LatLng(latitude,longitude));
+        map.panTo(new google.maps.LatLng(latitude, longitude));
         $('#input-latitude').val(latitude);
         $('#input-longitude').val(longitude);
     });
 
+
     // Hier worden alle markers ingeladen vanuit de database.
     $.each(data, function (index, value) {
         // alle variabelen voor de markers.
+        console.log("foreach loop");
         var imgLocation = new google.maps.LatLng(value.latitude, value.longitude);
 
         var newMarker = new google.maps.Marker({
@@ -75,10 +77,10 @@ function setMarkers(data) {
 
         // alle variabelen voor het creëren van polygonen.
         var test = [
-            parseFloat(value.latitude)+0.00015, parseFloat(value.longitude)-0.00015,
-            parseFloat(value.latitude)+0.00015, parseFloat(value.longitude)+0.00015,
-            parseFloat(value.latitude)-0.00015, parseFloat(value.longitude)+0.00015,
-            parseFloat(value.latitude)-0.00015, parseFloat(value.longitude)-0.00015
+            parseFloat(value.latitude) + 0.000075, parseFloat(value.longitude) - 0.00015,
+            parseFloat(value.latitude) + 0.000075, parseFloat(value.longitude) + 0.00015,
+            parseFloat(value.latitude) - 0.000075, parseFloat(value.longitude) + 0.00015,
+            parseFloat(value.latitude) - 0.000075, parseFloat(value.longitude) - 0.00015
         ];
         var polygon;
 
@@ -96,13 +98,34 @@ function setMarkers(data) {
             strokeColor: '#FF0000',
             strokeOpacity: 0.8,
             strokeWeight: 2,
-            fillColor: 'grey',
-            fillOpacity: 0.35
         });
 
-        //containsLocation(value.latitude,value.longitude,Polygon);
-        polygon.setMap(map);
 
+        polygon.setMap(map);
+        google.maps.event.addListener(polygon, 'click', function (e) {
+            console.log("Marker Created!");
+            var latitude = e.latLng.lat();
+            var longitude = e.latLng.lng();
+
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(latitude, longitude),
+                map: map,
+                draggable: true,
+                editable: true,
+                animation: google.maps.Animation.DROP
+            });
+            console.log(latitude + ', ' + longitude);
+            if(google.maps.geometry.poly.containsLocation(e.latLng, polygon)){
+                console.log("Inside Polygon");
+                polygon.strokeColor = 'blue';
+                console.log(polygon.strokeColor);
+            }
+            else{
+                console.log("Outside Polygon");
+            }
+            // Center of map
+            map.panTo(new google.maps.LatLng(latitude, longitude));
+        });
 
         // Dit zorgt er voor dat er maar op 1 marker tegelijk geklikt kan worden.
         // Als er op een tweede marker wordt geklikt, sluit de eerste.
@@ -121,34 +144,34 @@ function setMarkers(data) {
     });
 }
 
-function createMarker(e){
-    console.log("Marker Created!");
-    var latitude = e.latLng.lat();
-    var longitude = e.latLng.lng();
-    var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(latitude, longitude),
-        map: map,
-        draggable: true,
-        editable: true,
-        animation: google.maps.Animation.DROP
-    });
-    console.log( latitude + ', ' + longitude );
-
-    radius = new google.maps.Circle({map: map,
-        radius: 100,
-        center: event.latLng,
-        fillColor: '#777',
-        fillOpacity: 0.1,
-        strokeColor: '#AA0000',
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        draggable: true,    // Dragable
-        editable: true      // Resizable
-    });
-
-    // Center of map
-    map.panTo(new google.maps.LatLng(latitude,longitude));
-}
+//function createMarker(e){
+//    console.log("Marker Created!");
+//    var latitude = e.latLng.lat();
+//    var longitude = e.latLng.lng();
+//    var marker = new google.maps.Marker({
+//        position: new google.maps.LatLng(latitude, longitude),
+//        map: map,
+//        draggable: true,
+//        editable: true,
+//        animation: google.maps.Animation.DROP
+//    });
+//    console.log( latitude + ', ' + longitude );
+//
+//    radius = new google.maps.Circle({map: map,
+//        radius: 100,
+//        center: event.latLng,
+//        fillColor: '#777',
+//        fillOpacity: 0.1,
+//        strokeColor: '#AA0000',
+//        strokeOpacity: 0.8,
+//        strokeWeight: 2,
+//        draggable: true,    // Dragable
+//        editable: true      // Resizable
+//    });
+//
+//    // Center of map
+//    map.panTo(new google.maps.LatLng(latitude,longitude));
+//}
 google.maps.event.addDomListener(window, 'load', init);
 
 //Gedrag LatLng:
