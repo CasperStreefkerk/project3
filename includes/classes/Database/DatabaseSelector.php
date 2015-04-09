@@ -49,7 +49,7 @@ class DatabaseSelector extends Database
 
     public function loginUser($email, $password)
     {
-        $statement = $this->connection->prepare('SELECT id, email, password FROM user WHERE email = :email AND password = :password');
+        $statement = $this->connection->prepare('SELECT id, email, password, type FROM user WHERE email = :email AND password = :password');
         $statement->execute(array(
             ':email' => $email,
             ':password' => md5($password)
