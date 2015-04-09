@@ -44,7 +44,6 @@ function setMarkers(data) {
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(latitude, longitude),
             map: map,
-            draggable: true,
             editable: true,
             animation: google.maps.Animation.DROP
         });
