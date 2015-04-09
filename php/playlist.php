@@ -3,22 +3,18 @@ $data = json_decode(file_get_contents("https://api.spotify.com/v1/albums/669MIsr
 
 $i = 0;
 echo "<pre>";
- print_r($data);
+// print_r($data);
 // navigatie naar een track name:
 // $data->items[0]->name
 
 
-//foreach ($data as $file) {
-//    $i++;
-//    print_r($i);
-//    print_r($file[$i]->name);
-//}
-//for ($i=0; $i < count($data->items); $i++) {
-//    $trackData[] = array(
-//        'track'=> $data->items[$i]->name,
-//        'url'=> $data->items[$i]->;
-//    );
-//}
+for ($i=0; $i < count($data->items); $i++) {
+    $trackData[] = array(
+        'track'=> $data->items[$i]->name,
+        'url'=> $data->items[$i]->uri
+    );
+}
+print_r($trackData);
 echo "</pre>";
 
 
