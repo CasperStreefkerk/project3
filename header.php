@@ -54,7 +54,7 @@ require_once "includes/initialize.php";
                     echo "<span class=" . $message['type'] . ">" . $message['text'] . "</span>";
                 }
                 // De navigationbar nadat je bent ingelogd -- Hier moeten de knoppen komen..
-                echo "<div class='navbar-right'> <a href='logout.php'>Uitloggen</a> </div>";
+                echo "<div class='btn btn-default btn-md navbar-right'> <a href='logout.php'>Uitloggen</a> </div>";
 
             }else{ ?>
 
