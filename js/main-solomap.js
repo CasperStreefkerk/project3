@@ -93,9 +93,9 @@ function mapDrawing(data) {
         }
         var newLi = $('<li>', {text: value.location_name});
         //newLi.css({color: 'red'});
-        newLi.addClass('li'+liCounter);
+        newLi.addClass('list-group-item-danger'+ 'li'+liCounter);
         statusList.append(newLi);
-        statusList.children().addClass('list-group-item-danger');
+        //statusList.addClass('list-group-item-danger');
     });
 }
 
@@ -144,17 +144,17 @@ function setPolygon(value, map){
                 polygon.setOptions({strokeColor: 'green', fillColor: 'green'});
                 counter++;
                 if(value.location_name == $('.li1').text()){
-                    $('.li1').css({color: 'green'});
+                    $('.li1').addClass('list-group-item list-group-item-success');
                 }
                 if(value.location_name == $('.li2').text()){
-                    $('.li2').css({color: 'green'});
+                    $('.li2').addClass('list-group-item list-group-item-success');
 
                 }
                 if(value.location_name == $('.li3').text()){
-                    $('.li3').css({color: 'green'});
+                    $('.li3').addClass('list-group-item list-group-item-success');
                 }
                 if(value.location_name == $('.li4').text()){
-                    $('.li4').css({color: 'green'});
+                    $('.li4').addClass('list-group-item list-group-item-success');
                 }
                 if(counter == 4){
                     getPlaylist({}, loadPlaylist);
