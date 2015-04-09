@@ -92,9 +92,10 @@ function mapDrawing(data) {
             liCounter++;
         }
         var newLi = $('<li>', {text: value.location_name});
-        newLi.css({color: 'red'});
+        //newLi.css({color: 'red'});
         newLi.addClass('li'+liCounter);
         statusList.append(newLi);
+        statusList.children().addClass('list-group-item-danger');
     });
 }
 
@@ -189,6 +190,7 @@ function loadPlaylist(data){
     if($('#tracks' != "")){
         $.each(data, function(i, value){
             var li = $('<li>', {text: value.track});
+            li.addClass('list-group-item list-group-item-danger');
             $('#tracks').append(li);
         });
     }
@@ -196,7 +198,9 @@ function loadPlaylist(data){
         $('#tracks').empty();
         $.each(data, function(i, value){
             var link = '<li><a href="'+value.url +'">' + value.track + '</a></li>';
+            $('#tracks').children().addClass('list-group-item list-group-item-success');
             $('#tracks').append(link);
+
         });
     }
 

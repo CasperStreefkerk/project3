@@ -33,13 +33,13 @@ include_once('header.php');
                 <!--    de ul veranderd/ aanpast. (DE LI ELEMENTEN WORDEN IN JQUERY AUTOMATISCH ROOD GEMAAKT, VERANDERD IK LATER WEL)-->
                 <!--    Maar ik meld het even voor het geval je daar mee struggled ;)-->
                 <div id="marker-status">
-                    <ul id="status-list">
+                    <h3></h3>
+                    <ul id="status-list" class="list-group">
                     </ul>
                 </div>
                 <div id="Playlist">
-                    <h3 id="playlist-header"></h3>
-                    <ul id="tracks">
-
+                    <h3 id="playlist-header">Exclusive Playlist: Winne</h3>
+                    <ul id="tracks" class="list-group">
                     </ul>
                 </div>
             </div>
