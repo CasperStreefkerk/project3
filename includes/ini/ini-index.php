@@ -7,7 +7,7 @@ if(isset($_POST['submitLogin'])){
         $password = $_POST['password'];
 
         $user = $db->loginUser($email, $password);
-    //($user);
+    var_dump($user);
 
     if(!$user){
 
@@ -16,15 +16,22 @@ if(isset($_POST['submitLogin'])){
         die;
         //header("Location: index.php");
     }else{
+        $session->message("error", "<span class='red'>JE BENT SUCCESVOL INGELOGD</span>");
+        $session->set("id", $user['id']);
 
-        if($user['type'] == 2){
+        if($user['type'] == 1){
+            header("Location: events_main.php");
+            die;
+        }
+        elseif($user['type'] == 2){
+            header("Location: artists.php");
+            die;
 
 
         }
-        $session->message("error", "<span class='red'>JE BENT SUCCESVOL INGELOGD</span>");
-        $session->set("id", $user['id']);
-        header('Location: '.$_SERVER['PHP_SELF']);
-        die;
+
+        //header('Location: '.$_SERVER['PHP_SELF']);
+        //die;
         //header("Location: index.php");
 
     }

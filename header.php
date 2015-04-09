@@ -43,7 +43,7 @@ require_once "includes/initialize.php";
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">Heartbeat</a>
+            <a class="navbar-brand" href="index.php"><img src="includes/images/LOGO.png" width="70" height="70"  /> </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <?php
