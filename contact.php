@@ -10,7 +10,6 @@ include_once('header.php');
     <div class="container">
         <h1>Zoek contact</h1>
         <p>Contact pagina met mailform functie</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Registreer nu! &raquo;</a></p>
     </div>
 </div>
 

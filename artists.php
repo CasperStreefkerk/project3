@@ -11,7 +11,6 @@ include_once('header.php');
     <div class="container">
         <h1>Maak hier een event aan.</h1>
         <p>Hier kan je een event aanmaken, je kan kiezen tussen een solo event of een group event.</p>
-        <p><a class="btn btn-primary btn-lg" href="register.php" role="button">Registreer nu! &raquo;</a></p>
     </div>
 </div>
 
@@ -21,12 +20,12 @@ include_once('header.php');
             <div class="col-md-6">
                 <h2>Button solo event</h2>
                 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn btn-default" href="#" role="button">Lees meer &raquo;</a></p>
+                <p><a class="btn btn-default" href="solo_event_create.php" role="button">Maak solo event!</a></p>
             </div>
             <div class="col-md-6">
                 <h2>Button group event</h2>
                 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn btn-default" href="#" role="button">Lees meer &raquo;</a></p>
+                <p><a class="btn btn-default" href="group_event_create.php" role="button">Maak group event!</a></p>
             </div>
 </div>
 
