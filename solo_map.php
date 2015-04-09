@@ -8,6 +8,7 @@ include_once('header.php');
     <div class="jumbotron">
         <div class="container">
             <h1>Solo Map Event</h1>
+
             <p>Hieronder ziet u uw map voor het solo event.</p>
         </div>
     </div>
@@ -35,7 +36,12 @@ include_once('header.php');
                     <ul id="status-list">
                     </ul>
                 </div>
-
+                <div id="Playlist">
+                    <h3 id="playlist-header"></h3>
+                    <ul id="tracks">
+                        <li><a href="http://www.google.com/">SUUP</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -50,8 +56,7 @@ include_once('header.php');
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="js/main-solomap.js"></script>
 
+
     <?php
-
     include_once('footer.php');
-
     ?>

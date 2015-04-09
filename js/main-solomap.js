@@ -7,17 +7,19 @@ var openedWindow = null;
 var counter = 0;
 var liCounter = 0;
 var statusList = $('#status-list');
-var marker1 = $("ul li:nth-child(0)");
-var marker2 = $("ul li:nth-child(1)");
-var marker3 = $("ul li:nth-child(2)");
-var marker4 = $("ul li:nth-child(3)");
 
+
+//var link = $("a").attr("href", "http://www.google.com/");
+//var li = $('<li>', {text: "hoi"});
+//link.append(li);
+//$('.tracks').append(link);
 
 /**
  * Init functie wordt geladen.
  */
 function init() {
     getData({}, mapDrawing);
+    getPlaylist({}, loadPlaylist);
     console.log("Init functie");
 }
 /**
@@ -27,6 +29,15 @@ function getData(data, successCallback) {
     $.ajax({
         dataType: "json",
         url: 'php/mapdata.php',
+        data: data,
+        success: successCallback
+    });
+}
+
+function getPlaylist(data, successCallback) {
+    $.ajax({
+        dataType: "json",
+        url: 'php/playlist.php',
         data: data,
         success: successCallback
     });
@@ -115,7 +126,7 @@ function setPolygon(value, map){
         strokeColor: '#FF0000',
         fillColor: "red",
         strokeOpacity: 0.8,
-        strokeWeight: 2,
+        strokeWeight: 2
     });
     google.maps.event.addListener(polygon, 'click', function (e) {
         console.log("Marker Created!");
@@ -130,8 +141,6 @@ function setPolygon(value, map){
         });
         console.log(latitude + ', ' + longitude);
         if(polygon.fillColor == 'red'){
-            console.log($('.li1').text());
-            marker1.css({color: 'green'});
             if(google.maps.geometry.poly.containsLocation(e.latLng, polygon)){
                 console.log("Inside Polygon");
                 polygon.setOptions({strokeColor: 'green', fillColor: 'green'});
@@ -174,5 +183,13 @@ function windowManager(marker, window, map){
     });
 }
 
+function loadPlaylist(data){
+    console.log(data);
+    $('#')
+    $.each(data, function(i, value){
+        var li = $('<li>', {text: value.track});
+        $('#tracks').append(li);
+    });
+}
 
 
