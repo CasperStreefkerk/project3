@@ -9,10 +9,6 @@ var liCounter = 0;
 var statusList = $('#status-list');
 
 
-//var link = $("a").attr("href", "http://www.google.com/");
-//var li = $('<li>', {text: "hoi"});
-//link.append(li);
-//$('.tracks').append(link);
 
 /**
  * Init functie wordt geladen.
@@ -20,6 +16,7 @@ var statusList = $('#status-list');
 function init() {
     getData({}, mapDrawing);
     getPlaylist({}, loadPlaylist);
+
     console.log("Init functie");
 }
 /**
@@ -150,12 +147,16 @@ function setPolygon(value, map){
                 }
                 if(value.location_name == $('.li2').text()){
                     $('.li2').css({color: 'green'});
+
                 }
                 if(value.location_name == $('.li3').text()){
                     $('.li3').css({color: 'green'});
                 }
                 if(value.location_name == $('.li4').text()){
                     $('.li4').css({color: 'green'});
+                }
+                if(counter == 4){
+                    getPlaylist({}, loadPlaylist);
                 }
             }
         }
@@ -185,11 +186,20 @@ function windowManager(marker, window, map){
 
 function loadPlaylist(data){
     console.log(data);
-    $('#')
-    $.each(data, function(i, value){
-        var li = $('<li>', {text: value.track});
-        $('#tracks').append(li);
-    });
+    if($('#tracks' != "")){
+        $.each(data, function(i, value){
+            var li = $('<li>', {text: value.track});
+            $('#tracks').append(li);
+        });
+    }
+    if(counter == 4){
+        $('#tracks').empty();
+        $.each(data, function(i, value){
+            var link = '<li><a href="'+value.url +'">' + value.track + '</a></li>';
+            $('#tracks').append(link);
+        });
+    }
+
 }
 
 
