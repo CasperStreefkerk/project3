@@ -36,7 +36,12 @@ include_once('header.php');
                     <ul id="status-list">
                     </ul>
                 </div>
-
+                <div id="Playlist">
+                    <h3 id="playlist-header"></h3>
+                    <ul id="tracks">
+                        <li><a href="http://www.google.com/">SUUP</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
