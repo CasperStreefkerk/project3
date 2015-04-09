@@ -7,7 +7,7 @@ if(isset($_POST['submitLogin'])){
         $password = $_POST['password'];
 
         $user = $db->loginUser($email, $password);
-    //var_dump($user);
+        var_dump($user);
 
     if(!$user){
 
@@ -21,12 +21,13 @@ if(isset($_POST['submitLogin'])){
         $session->set("id", $user['id']);
         header('Location: '.$_SERVER['PHP_SELF']);
         die;
-        //header("Location: index.php");
+        header("Location: artists.php");
 
     }
 
 
 }
+echo $_POST;
 
 
 ?>
