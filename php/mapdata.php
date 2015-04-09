@@ -18,7 +18,7 @@ require_once("settings.php");
 
 // Daarnaast wil ik bij solo_event_create.php en main_event_create.php dat je gewoon alvast alle input velden neerzet die ik in moet gaan vullen.
 // Dus inclusief queries waarmee het naar de database wordt geschreven.. zodat ik straks eigenlijk alleen maar de velden hoef in te vullen
-// met javascript. (dat het gelijk werkt).
+// met javascript. (dat het gelijk werkt ).
 
 
 
