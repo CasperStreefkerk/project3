@@ -93,9 +93,9 @@ function mapDrawing(data) {
         }
         var newLi = $('<li>', {text: value.location_name});
         //newLi.css({color: 'red'});
-        newLi.addClass('list-group-item-danger'+ 'li'+liCounter);
+        newLi.addClass('li'+liCounter);
         statusList.append(newLi);
-        //statusList.addClass('list-group-item-danger');
+        statusList.children().addClass('list-group-item list-group-item-danger');
     });
 }
 
@@ -144,19 +144,23 @@ function setPolygon(value, map){
                 polygon.setOptions({strokeColor: 'green', fillColor: 'green'});
                 counter++;
                 if(value.location_name == $('.li1').text()){
+                    $('.li1').removeClass('list-group-item list-group-item-danger');
                     $('.li1').addClass('list-group-item list-group-item-success');
                 }
                 if(value.location_name == $('.li2').text()){
+                    $('.li2').removeClass('list-group-item list-group-item-danger');
                     $('.li2').addClass('list-group-item list-group-item-success');
-
                 }
                 if(value.location_name == $('.li3').text()){
+                    $('.li3').removeClass('list-group-item list-group-item-danger');
                     $('.li3').addClass('list-group-item list-group-item-success');
                 }
                 if(value.location_name == $('.li4').text()){
+                    $('.li4').removeClass('list-group-item list-group-item-danger');
                     $('.li4').addClass('list-group-item list-group-item-success');
                 }
                 if(counter == 4){
+                    $('#')
                     getPlaylist({}, loadPlaylist);
                 }
             }
@@ -198,8 +202,8 @@ function loadPlaylist(data){
         $('#tracks').empty();
         $.each(data, function(i, value){
             var link = '<li><a href="'+value.url +'">' + value.track + '</a></li>';
-            $('#tracks').children().addClass('list-group-item list-group-item-success');
             $('#tracks').append(link);
+            $('#tracks').children().addClass('list-group-item list-group-item-success');
 
         });
     }
