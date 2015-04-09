@@ -57,19 +57,36 @@ class DatabaseSelector extends Database
         return $statement->fetch();
     }
 
+    /**
+     * @param $email
+     * @param $password
+     * @param $usertype
+     * @return bool
+     */
     public function registerUser($email, $password, $usertype)
 
     {
-        $statement = $this->connection->prepare('INSERT INTO user(email, password, type) VALUES (:email,:password, :usertype)');
-        $statement->execute(array(
+        $statement = $this->connection->prepare('INSERT INTO user(email, password, type) VALUES (:email,:password,:type)');
+        $result = $statement->execute(array(
             ':email' => $email,
             ':password' => md5($password),
-            'type' => $usertype
+            ':type' => $usertype
+
         ));
-        $test = $this->connection->lastInsertID();
-        return($test);
 
 
+
+    }
+
+    /**
+     * @param $email
+     * @return mixed
+     */
+    public function getUserIdByEmail($email)
+    {
+        $statement = $this->connection->prepare('SELECT id FROM user WHERE email = :email');
+        $statement->execute(array(':email' => $email));
+        return $statement->fetch();
     }
 
     public function registerUsers($lastid, $firstname, $lastname, $address, $place, $zipcode)
@@ -105,18 +122,19 @@ class DatabaseSelector extends Database
 
     }
 
-    public function registerSponsor($lastid, $companyname, $contactperson_fn, $contactperson_ln, $address, $place, $zipcode)
+    public function registerSponsor($lastid, $companyname, $contactperson_fn, $contactperson_ln, $address, $place, $zipcode,$phonenumber)
 
     {
-        $statement = $this->connection->prepare('INSERT INTO sponsors(sponsor_id, companyname, contactperson_firstname, contactperson_lastname, address, place, zipcode) VALUES (:last_id,:companyname,:contactperson_firstname, :contactperson_lastname,:address,:place,:zipcode)');
+        $statement = $this->connection->prepare('INSERT INTO sponsors(sponsor_id, companyname, contactperson_firstname, contactperson_lastname, address, place, zipcode, phonenumber) VALUES (:last_id,:companyname,:contactperson_firstname, :contactperson_lastname,:address,:place,:zipcode,:phonenumber)');
         $statement->execute(array(
-            ':email' => $lastid,
+            ':last_id' => $lastid,
             ':companyname' => $companyname,
             ':contactperson_firstname' => $contactperson_fn,
             ':contactperson_lastname' => $contactperson_ln,
             ':address' => $address,
             ':place' => $place,
-            ':zipcode' => $zipcode
+            ':zipcode' => $zipcode,
+            ':phonenumber' => $phonenumber
         ));
 
 
