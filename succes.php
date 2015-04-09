@@ -11,7 +11,6 @@ include_once('header.php');
     <div class="container">
         <h1>Versturen gelukt!</h1>
         <p>Uw formulier is verstuurd.</p>
-        <p><a class="btn btn-primary btn-lg" href="register.php" role="button">Registreer nu! &raquo;</a></p>
     </div>
 </div>
 

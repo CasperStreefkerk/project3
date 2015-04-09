@@ -9,7 +9,6 @@ include_once('header.php');
         <div class="container">
             <h1>Solo Map Event</h1>
             <p>Hieronder ziet u uw map voor het solo event.</p>
-            <p><a class="btn btn-primary btn-lg" href="register.php" role="button">Registreer nu! &raquo;</a></p>
         </div>
     </div>
 
