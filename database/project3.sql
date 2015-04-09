@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Machine: 127.0.0.1
--- Gegenereerd op: 09 apr 2015 om 15:45
+-- Gegenereerd op: 09 apr 2015 om 16:18
 -- Serverversie: 5.6.20
 -- PHP-versie: 5.5.15
 
@@ -34,6 +34,20 @@ CREATE TABLE IF NOT EXISTS `artists` (
   `contactperson_lastname` varchar(50) NOT NULL,
   `phonenumber` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `markers`
+--
+
+CREATE TABLE IF NOT EXISTS `markers` (
+  `marker_id` int(11) NOT NULL,
+  `location_name` varchar(255) NOT NULL,
+  `latitude` varchar(255) NOT NULL,
+  `longitude` varchar(255) NOT NULL,
+  `description` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
