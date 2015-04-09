@@ -36,9 +36,9 @@ function mapDrawing(data) {
     console.log(data);
     // De globale variables binnen de mapDrawing functie.
     // Deze zorgen voor de standaard positie en zoom van de map.
-    var myLatlng = new google.maps.LatLng(51.924366902616114, 4.494953155517578);
+    var myLatlng = new google.maps.LatLng(51.914891095315554, 4.472165107727051);
     var mapOptions = {
-        zoom: 12,
+        zoom: 14,
         center: myLatlng
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
