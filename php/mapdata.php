@@ -1,5 +1,5 @@
 <?php
-require_once("settings.php");
+require_once("includes/settings.php");
 
 // Hier maak ik een hele simpele query waarbij ik gewoon alle markers van de tabel ophaal.
 // Wat jij nu moet doen is een query maken die dus die de gegevens van 1 event ophalen. Het maakt niet uit als deze hardcoded zijn, als hij er maar
