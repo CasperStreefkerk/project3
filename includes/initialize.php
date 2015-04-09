@@ -36,6 +36,8 @@ try {
 
 
 } catch (Exception $e) {
+
+
     //Set error & empty students array if we have any error
 
     $error = "Oops, try to fix your error please: " . $e->getMessage() . " on line " . $e->getLine() . " of " . $e->getFile();
