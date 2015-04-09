@@ -8,6 +8,7 @@ include_once('header.php');
     <div class="jumbotron">
         <div class="container">
             <h1>Solo Map Event</h1>
+
             <p>Hieronder ziet u uw map voor het solo event.</p>
         </div>
     </div>
@@ -49,8 +50,7 @@ include_once('header.php');
         <!-- Own JS file -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="js/main-solomap.js"></script>
+
     <?php
-
     include_once('footer.php');
-
     ?>
