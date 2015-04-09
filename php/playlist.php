@@ -1,6 +1,5 @@
 <?php
-    $data = json_decode(file_get_contents("https://api.spotify.com/v1/users/")
-
-    $
+    $data = json_decode(file_get_contents("http://ws.spotify.com/search/1/album?q=foo"));
+    
     print_r($data);
 ?>
