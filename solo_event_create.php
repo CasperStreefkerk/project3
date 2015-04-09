@@ -5,7 +5,6 @@ include_once('header.php');
 ?>
 
 
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
@@ -23,9 +22,6 @@ include_once('header.php');
             </div>
         </div>
 
-
-    <?php
-
-    include_once('footer.php');
-
-    ?>
+<?php
+include_once('footer.php');
+?>
