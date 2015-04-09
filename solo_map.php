@@ -16,11 +16,13 @@ include_once('header.php');
     <div class="container">
         <!-- Example row of columns -->
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
 
                 <div id="map-canvas">
 
                 </div>
+            </div>
+                <div class="col-md-6">
                 <!--Dit is voor het opslaan van true of false bij bezochte markers. (niet aankomen Casper!)-->
                 <form method="post">
                     <input type="hidden" name="marker1">
@@ -33,7 +35,7 @@ include_once('header.php');
                 <!--    de ul veranderd/ aanpast. (DE LI ELEMENTEN WORDEN IN JQUERY AUTOMATISCH ROOD GEMAAKT, VERANDERD IK LATER WEL)-->
                 <!--    Maar ik meld het even voor het geval je daar mee struggled ;)-->
                 <div id="marker-status">
-                    <h3></h3>
+                    <h3>Playlist status</h3>
                     <ul id="status-list" class="list-group">
                     </ul>
                 </div>
@@ -42,7 +44,8 @@ include_once('header.php');
                     <ul id="tracks" class="list-group">
                     </ul>
                 </div>
-            </div>
+                    </div>
+
         </div>
 
         <!-- Jquery file  -->
