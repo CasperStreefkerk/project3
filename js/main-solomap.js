@@ -195,8 +195,8 @@ function loadPlaylist(data){
     if(counter == 4){
         $('#tracks').empty();
         $.each(data, function(i, value){
-            var link = "<li> <a href=""";
-            $('#tracks').append(li);
+            var link = '<li><a href="'+value.url +'">' + value.track + '</a></li>';
+            $('#tracks').append(link);
         });
     }
 
