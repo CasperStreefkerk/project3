@@ -19,13 +19,13 @@ include_once('header.php');
     <div class="row">
         <div class="col-md-6">
             <h2>Solo Event 1</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p>Dit solo event vindt plaats in Rotterdam. Doe mee met dit event en speel op die manier een gave playlist vrij van een Rotterdamse artiest. </p>
             <p><a class="btn btn-default" href="solo_map.php" role="button">Doe mee!</a></p>
         </div>
         <div class="col-md-6">
             <h2>Group Event 1</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="group_map.php" role="button">Lees meer &raquo;</a></p>
+            <p>Altijd al een mini concert willen meemaken? Meld je nu aan bij dit event en zie wat er gebeurd! </p>
+            <p><a class="btn btn-default" href="group_map.php" role="button">Doe mee! &raquo;</a></p>
         </div>
     </div>
 
