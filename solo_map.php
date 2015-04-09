@@ -7,7 +7,7 @@ include_once('header.php');
     <!-- test etst etststtest test -->
     <div class="jumbotron">
         <div class="container">
-            <h1>Solo Map Event</h1>
+            <h2>Solo Map Event</h2>
 
             <p>Hieronder ziet u uw map voor het solo event.</p>
         </div>
@@ -16,13 +16,7 @@ include_once('header.php');
     <div class="container">
         <!-- Example row of columns -->
         <div class="row">
-            <div class="col-md-6">
-
-                <div id="map-canvas">
-
-                </div>
-            </div>
-                <div class="col-md-6">
+            <div class="col-md-3">
                 <!--Dit is voor het opslaan van true of false bij bezochte markers. (niet aankomen Casper!)-->
                 <form method="post">
                     <input type="hidden" name="marker1">
@@ -39,8 +33,20 @@ include_once('header.php');
                     <ul id="status-list" class="list-group">
                     </ul>
                 </div>
+            </div>
+
+            <div class="col-md-6">
+
+                <div id="map-canvas">
+
+                </div>
+            </div>
+
+
+
+                    <div class="col-md-3">
                 <div id="Playlist">
-                    <h3 id="playlist-header">Exclusive Playlist: Winne</h3>
+                    <h3 id="playlist-header">Exclusive Playlist</h3>
                     <ul id="tracks" class="list-group">
                     </ul>
                 </div>
