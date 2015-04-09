@@ -2,6 +2,8 @@
 if(isset($_POST['registerUser'])){
     $registered['id'] = "";
 
+    echo $_POST;
+
 //    echo $_POST['usertype'];
 //    echo $_POST['email'];
 //    echo $_POST['password'];
