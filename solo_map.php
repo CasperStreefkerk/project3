@@ -4,7 +4,6 @@ include_once('header.php');
 
 ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <!-- test etst etststtest test -->
     <div class="jumbotron">
         <div class="container">
             <h2>Solo Map Event</h2>
@@ -36,7 +35,6 @@ include_once('header.php');
             </div>
 
             <div class="col-md-6">
-
                 <div id="map-canvas">
 
                 </div>
@@ -62,7 +60,7 @@ include_once('header.php');
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
         <!--<script src="js/jquery.js"></script>-->
         <!-- Own JS file -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
         <script src="js/main-solomap.js"></script>
 
 
