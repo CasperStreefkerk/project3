@@ -5,13 +5,13 @@ $(init);
 
 var counter = 0;
 var markers = [];
+
 /**
  * Init functie wordt geladen.
  */
 
 function init() {
     setMarkers();
-    $('#delete-Marker').on('click', deleteMarker);
 }
 
 function setMarkers() {
@@ -59,10 +59,4 @@ function setMarkers() {
             }
         }
     });
-}
-
-function deleteMarker(){
-    console.log("hoi");
-    markers.splice( $.inArray(markers[2], markers), 1 );
-    console.log(markers);
 }

@@ -1,8 +1,7 @@
 <?php
 require_once("settings.php");
 
-
-$markerQuery = "SELECT * FROM markers WHERE marker_id IN (3, 4, 5, 6)";
+$markerQuery = "SELECT * FROM markers WHERE marker_id = 7";
 $retrieveMarkers = mysqli_query($conn, $markerQuery);
 
 if($result = $conn->query($markerQuery)){
