@@ -27,13 +27,16 @@ if(isset($_POST['submit_button'])){
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-12">
-            <h2>Group event alles</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <h2>Group event</h2>
+            <p>Super tof event georganiseerd door lokale Rotterdamse artiesten. Meld je hieronder aan en nodig zoveel mogelijk vrienden uit. Er staat iets groots te gebeuren!</p>
         </div>
         <div id="map-canvas"></div>
         <div id="event-info"></div>
-        <form method="post" action=""'>
-            <input type="submit" name="submit_button" value="<?= $status?>">
+
+        <form method="post" action="">
+            <div class="form-group">
+            <input  class="btn-success" type="submit" name="submit_button" value="<?= $status?>">
+            </div>
         </form>
         <p><b><?=$signUps?></b> mensen gaan naar dit evenement</p>
     </div>

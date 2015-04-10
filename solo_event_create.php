@@ -17,7 +17,7 @@ include_once('header.php');
         <div class="row">
             <div class="col-md-6">
                 <h2>Maak hier een solo event aan voor uw fans.</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                <p>Fans kunnen deze solo events doen door bepaalde plaatsen te bezoeken. Klik hieronder 4 plaatsen aan. Verder geeft u een beschrijving mee en klikt op versturen. Dan is het event aangemaakt. </p>
                 <div id="map-canvas">
                 </div>
             </div>

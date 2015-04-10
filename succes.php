@@ -16,9 +16,8 @@ include_once('header.php');
     <!-- Example row of columns -->
     <div class="row">
             <div class="col-md-12">
-                <h2>Gelukt G!</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn btn-default" href="#" role="button">Lees meer &raquo;</a></p>
+                <h2>Gelukt!</h2>
+                <p>Het aanmaken van het event is gelukt. Gebruikers kunnen nu uw event zien en daar gebruik van maken.</p>
             </div>
 </div>
 

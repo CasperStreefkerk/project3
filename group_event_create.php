@@ -19,7 +19,7 @@ include_once('header.php');
     <div class="row">
         <div class="col-md-6">
             <h2>Maak hier een group event aan voor uw fans.</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p>Group events zijn events waar een grote groep mensen bij elkaar komt. Klik hieronder 1 plaats aan waar u wilt dat het event plaatsvind. Verder moet u een begin en eindtijd specificeren en een kleine beschrijving meegeven.</p>
             <div id="map-canvas">
             </div>
         </div>
