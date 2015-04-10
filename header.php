@@ -1,6 +1,32 @@
 <?php
-require_once "includes/initialize.php";
+session_start();
+//require_once "includes/initialize.php";
+include("php/settings.php");
 
+
+if(isset($_POST['submitLogin'])) {
+    $gebruikersnaam = $_POST['email'];
+    $wachtwoord = $_POST['password'];
+    $loginQuery = "SELECT * FROM user WHERE email ='$gebruikersnaam' AND password = '$wachtwoord'";
+    $loginQueryResult = mysqli_query($conn, $loginQuery);
+
+    if ($row = mysqli_fetch_assoc($loginQueryResult)) {
+        // inloggen
+        $_SESSION['loggedIn'] = true;
+        echo $row['type'];
+        if($row['type'] == "3"){
+            echo "artiest!";
+            header('location: artists.php');
+        }
+        if($row['type'] == "1"){
+            echo "Fan!";
+            header('location: events_main.php');
+        }
+
+    } else {
+        $loginError = "Uw gebruikersnaam of wachtwoord is onjuist.";
+    }
+}
 ?>
 
 
@@ -39,40 +65,47 @@ require_once "includes/initialize.php";
     <div class="container">
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="index.php"><img src="includes/images/LOGO.png" width="70" height="70"  /> </a>
+            <a class="navbar-brand" href="index.php"><img src="includes/images/LOGO.png" width="70" height="70"/> </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <?php
 
-            if ($session->keyExists("id")) {
-                // Eenmalige message nadat je bent ingelogd
-                if(isset($message)) {
-                    echo "<span class=" . $message['type'] . ">" . $message['text'] . "</span>";
-                }
-                // De navigationbar nadat je bent ingelogd -- Hier moeten de knoppen komen..
-                echo "<div class='navbar-right'> <a href='logout.php'>Uitloggen</a> </div>";
+                if(isset($_SESSION['loggedIn'])) {
+                    // Eenmalige message nadat je bent ingelogd
+                    if (isset($message)) {
+//                    echo "<span class=" . $message['type'] . ">" . $message['text'] . "</span>";
+                    }
+                    // De navigationbar nadat je bent ingelogd -- Hier moeten de knoppen komen..
+                    echo "<div class='btn btn-default btn-md navbar-right'> <a href='logout.php'>Uitloggen</a> </div>";
 
-            }else{ ?>
+                } else { ?>
 
-                <form class="navbar-form navbar-right" action="" method="POST">
-                    <div class="form-group">
-                        <input type="text" placeholder="Email" id="email"  name="email" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Wachtwoord" id="password" name="password" class="form-control">
-                    </div>
-                    <button type="submit" name="submitLogin" class="btn btn-success">Log in</button>
-                    <!--- <input type="submit" name="submitLogin" value="Log in" /> -->
-                    <a href="register.php" class="btn btn-success">Registreer</a>
-                </form>
+                    <form class="navbar-form navbar-right" action="" method="POST">
+                        <div class="form-group">
+                            <input type="text" placeholder="Email" id="email" name="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Wachtwoord" id="password" name="password"
+                                   class="form-control">
+                        </div>
+                        <button type="submit" name="submitLogin" class="btn btn-success">Log in</button>
+                        <!--- <input type="submit" name="submitLogin" value="Log in" /> -->
+                        <a href="register.php" class="btn btn-success">Registreer</a>
+                    </form>
 
-                <?php if (isset($message)) : ?>
-                    <span class="<?= $message['type']; ?>"><?= $message['text']; ?></span>
-                <?php endif; ?>
+                    <!--                --><?php //if (isset($message)) :
+                    ?>
+                    <!--                    <span class="--><? //= $message['type'];
+                    ?><!--">--><? //= $message['text'];
+                    ?><!--</span>-->
+                    <!--                --><?php //endif;
+                    ?>
 
 
-            <?php } ?>
-        </div><!--/.navbar-collapse -->
+                    <!--            --><?php }
+             ?>
+        </div>
+        <!--/.navbar-collapse -->
 
     </div>
 </nav>

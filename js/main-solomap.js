@@ -44,9 +44,9 @@ function mapDrawing(data) {
     console.log(data);
     // De globale variables binnen de mapDrawing functie.
     // Deze zorgen voor de standaard positie en zoom van de map.
-    var myLatlng = new google.maps.LatLng(51.914891095315554, 4.472165107727051);
+    var myLatlng = new google.maps.LatLng(51.91804109675677, 4.470727443695068);
     var mapOptions = {
-        zoom: 14,
+        zoom: 16,
         center: myLatlng
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -92,9 +92,10 @@ function mapDrawing(data) {
             liCounter++;
         }
         var newLi = $('<li>', {text: value.location_name});
-        newLi.css({color: 'red'});
+        //newLi.css({color: 'red'});
         newLi.addClass('li'+liCounter);
         statusList.append(newLi);
+        statusList.children().addClass('list-group-item list-group-item-danger');
     });
 }
 
@@ -143,19 +144,23 @@ function setPolygon(value, map){
                 polygon.setOptions({strokeColor: 'green', fillColor: 'green'});
                 counter++;
                 if(value.location_name == $('.li1').text()){
-                    $('.li1').css({color: 'green'});
+                    $('.li1').removeClass('list-group-item list-group-item-danger');
+                    $('.li1').addClass('list-group-item list-group-item-success');
                 }
                 if(value.location_name == $('.li2').text()){
-                    $('.li2').css({color: 'green'});
-
+                    $('.li2').removeClass('list-group-item list-group-item-danger');
+                    $('.li2').addClass('list-group-item list-group-item-success');
                 }
                 if(value.location_name == $('.li3').text()){
-                    $('.li3').css({color: 'green'});
+                    $('.li3').removeClass('list-group-item list-group-item-danger');
+                    $('.li3').addClass('list-group-item list-group-item-success');
                 }
                 if(value.location_name == $('.li4').text()){
-                    $('.li4').css({color: 'green'});
+                    $('.li4').removeClass('list-group-item list-group-item-danger');
+                    $('.li4').addClass('list-group-item list-group-item-success');
                 }
                 if(counter == 4){
+                    $('#')
                     getPlaylist({}, loadPlaylist);
                 }
             }
@@ -189,6 +194,7 @@ function loadPlaylist(data){
     if($('#tracks' != "")){
         $.each(data, function(i, value){
             var li = $('<li>', {text: value.track});
+            li.addClass('list-group-item list-group-item-danger');
             $('#tracks').append(li);
         });
     }
@@ -197,6 +203,8 @@ function loadPlaylist(data){
         $.each(data, function(i, value){
             var link = '<li><a href="'+value.url +'">' + value.track + '</a></li>';
             $('#tracks').append(link);
+            $('#tracks').children().addClass('list-group-item list-group-item-success');
+
         });
     }
 

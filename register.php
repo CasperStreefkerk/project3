@@ -8,8 +8,8 @@ include_once('header.php');
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Welkom bij ons project!</h1>
-        <p>Ons project is super mooi. Koop ons product nu voor maar 5 euro.</p>
+        <h1>Registreer nu bij Heartbeat!</h1>
+        <p>Begin meteen met ontdekken van muziek!</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Registreer nu! &raquo;</a></p>
     </div>
 </div>

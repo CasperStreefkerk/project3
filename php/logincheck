@@ -1,0 +1,29 @@
+<?php
+include_once("php/settings.php");
+if(isset($_POST['submitLogin'])){
+    $gebruikersnaam = $_POST['email'];
+    $wachtwoord = $_POST['password'];
+    echo $gebruikersnaam;
+    $loginQuery = "SELECT * FROM user WHERE email ='$gebruikersnaam' AND password = '$wachtwoord'";
+}
+$_SESSION['loginStatus'] = false;
+
+?>
+
+if(isset($_POST['submit'])){
+$gebruikersnaam = $_POST['username'];
+$wachtwoord = $_POST['password'];
+$loginQuery = "SELECT * FROM gebruikers WHERE gebruikersnaam ='$gebruikersnaam' AND wachtwoord = '$wachtwoord'";
+$loginQueryResult = mysqli_query($conn, $loginQuery);
+
+if ($row = mysqli_fetch_assoc($loginQueryResult)){
+// inloggen
+$_SESSION['loggedIn'] = true;
+$_SESSION['naam'] = $row["Naam"];
+header('location: admin-reserveringen.php');
+}
+else
+{
+$loginError = "Uw gebruikersnaam of wachtwoord is onjuist.";
+}
+};
