@@ -2,16 +2,29 @@
 if(isset($_POST['registerUser'])){
     $registered['id'] = "";
 
-    echo $_POST;
+//    echo $_POST;
 
 //    echo $_POST['usertype'];
 //    echo $_POST['email'];
 //    echo $_POST['password'];
 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+
+
+
+
     $usertype = $_POST['usertype'];
     $firstname = $_POST['firstname'];
+
+    if($usertype == '1'){
+        $email = $_POST['user_email'];
+        $password = $_POST['user_password'];
+    }elseif($usertype == '2'){
+        $email = $_POST['artist_email'];
+        $password = $_POST['artist_password'];
+    } elseif($usertype == '3'){
+        $email = $_POST['sponsor_email'];
+        $password = $_POST['sponsor_password'];
+    }
 
     $db->registerUser($email, $password, $usertype);
     $registered = $db->getUserIdByEmail($email);
