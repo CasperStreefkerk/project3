@@ -19,7 +19,7 @@ if(isset($_POST['submitLogin'])) {
             header('location: artists.php');
         }
         if($row['type'] == "1"){
-            echo "Fan!";97
+            echo "Fan!";
             header('location: events_main.php');
         }
 
