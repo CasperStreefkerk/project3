@@ -18,6 +18,10 @@ if(isset($_POST['submitLogin'])) {
             echo "artiest!";
             header('location: artists.php');
         }
+        if($row['type'] == "2"){
+            echo "artiest!";
+            header('location: artists.php');
+        }
         if($row['type'] == "1"){
             echo "Fan!";
             header('location: events_main.php');
