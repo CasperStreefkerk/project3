@@ -13,16 +13,14 @@ if(isset($_POST['submitLogin'])) {
     if ($row = mysqli_fetch_assoc($loginQueryResult)) {
         // inloggen
         $_SESSION['loggedIn'] = true;
-        //echo $row['type'];
+        echo $row['type'];
         if($row['type'] == "3"){
-            //echo "artiest!";
-            header("Location: artists.php");
-            exit();
+            echo "artiest!";
+            header('location: artists.php');
         }
         if($row['type'] == "1"){
-            //echo "Fan!";
-            header("Location: events_main.php");
-            exit();
+            echo "Fan!";97
+            header('location: events_main.php');
         }
 
     } else {
