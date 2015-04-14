@@ -9,9 +9,7 @@ include('header.php');
 //exit;
 
     session_destroy();
-
-    header('Location: index.php');
-    exit;
+    header('location: index.php');
 
 
 

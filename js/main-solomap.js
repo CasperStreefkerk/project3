@@ -204,8 +204,10 @@ function loadPlaylist(data){
             var link = '<li><a href="'+value.url +'">' + value.track + '</a></li>';
             $('#tracks').append(link);
             $('#tracks').children().addClass('list-group-item list-group-item-success');
+
         });
     }
+
 }
 
 
