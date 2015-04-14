@@ -1,6 +1,41 @@
 <?php
+<<<<<<< HEAD
 require_once "includes/initialize.php";
 
+=======
+session_start();
+//require_once "includes/initialize.php";
+include("php/settings.php");
+
+
+if(isset($_POST['submitLogin'])) {
+    $gebruikersnaam = $_POST['email'];
+    $wachtwoord = $_POST['password'];
+    $loginQuery = "SELECT * FROM user WHERE email ='$gebruikersnaam' AND password = '$wachtwoord'";
+    $loginQueryResult = mysqli_query($conn, $loginQuery);
+
+    if ($row = mysqli_fetch_assoc($loginQueryResult)) {
+        // inloggen
+        $_SESSION['loggedIn'] = true;
+        echo $row['type'];
+        if($row['type'] == "3"){
+            echo "artiest!";
+            header('location: artists.php');
+        }
+        if($row['type'] == "2"){
+            echo "artiest!";
+            header('location: artists.php');
+        }
+        if($row['type'] == "1"){
+            echo "Fan!";
+            header('location: events_main.php');
+        }
+
+    } else {
+        $loginError = "Uw gebruikersnaam of wachtwoord is onjuist.";
+    }
+}
+>>>>>>> 3bf5da3e3df1183fdb312157167a70d598b196b1
 ?>
 
 
