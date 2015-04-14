@@ -21,6 +21,8 @@ include_once('header.php');
             <h2>Solo Event 1</h2>
             <p>Dit solo event vindt plaats in Rotterdam. Doe mee met dit event en speel op die manier een gave playlist vrij van een Rotterdamse artiest. </p>
             <p><a class="btn btn-default" href="solo_map.php" role="button">Doe mee!</a></p>
+
+            <p class="bg-info"><a href="event_list.php">Of bekijk hier alle overige events</a></p>
         </div>
         <div class="col-md-6">
             <h2>Group Event 1</h2>

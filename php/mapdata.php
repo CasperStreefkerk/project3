@@ -1,8 +1,11 @@
 <?php
 require_once("settings.php");
 
+//$eventid = $_SESSION['mapid'];
+//$markerQuery = "SELECT * FROM markers WHERE event_id = '". $eventid . "'";
 
-$markerQuery = "SELECT * FROM markers WHERE marker_id IN (3, 4, 5, 6)";
+
+$markerQuery = "SELECT * FROM markers WHERE event_id = 15";
 $retrieveMarkers = mysqli_query($conn, $markerQuery);
 
 if($result = $conn->query($markerQuery)){

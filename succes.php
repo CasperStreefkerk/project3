@@ -18,6 +18,7 @@ include_once('header.php');
             <div class="col-md-12">
                 <h2>Gelukt!</h2>
                 <p>Het aanmaken van het event is gelukt. Gebruikers kunnen nu uw event zien en daar gebruik van maken.</p>
+                <p class="bg-info"><a href="event_list.php">Klik hier om naar de volledige eventlijst te gaan.<a/></p>
             </div>
 </div>
 

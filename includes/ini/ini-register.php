@@ -32,19 +32,19 @@ if(isset($_POST['registerUser'])){
     //echo $registered['id'];
 
     if($usertype == '1'){
-            $lastid = $registered['id'];
-            $firstname = $_POST['firstname'];
-            $lastname = $_POST['lastname'];
-            $address = $_POST['address'];
-            $place = $_POST['place'];
-            $zipcode = $_POST['zipcode'];
+        $lastid = $registered['id'];
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $address = $_POST['address'];
+        $place = $_POST['place'];
+        $zipcode = $_POST['zipcode'];
 
-            $registerFan = $db->registerUsers($lastid, $firstname, $lastname, $address, $place, $zipcode);
-            $session->message("error", "<span class='red'>Welkom FAN! <br/>
+        $registerFan = $db->registerUsers($lastid, $firstname, $lastname, $address, $place, $zipcode);
+        $session->message("error", "<span class='red'>Welkom FAN! <br/>
                                 Je bent geregistreerd, log nu in met je gegevens.</span>");
-            header("Location: index.php");
+        header("Location: index.php");
 
-            //echo $lastid ." , ". $firstname ." , ". $lastname ." , ". $address ." , ". $place ." , ". $zipcode;
+        //echo $lastid ." , ". $firstname ." , ". $lastname ." , ". $address ." , ". $place ." , ". $zipcode;
     }
 
     if($usertype == '2'){

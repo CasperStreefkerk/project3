@@ -24,7 +24,7 @@ include_once('header.php');
             <div class="col-md-6">
 <!--                Dit ziet er "nu" heel onoverzichtelijk uit, maar als goed is, is iedere label verbonden aan de juiste inputfield
                     De locatie en textarea input kan je veranderen naar iets anders als je wilt, want ik vul er toch niks in met Jquery.-->
-                <form action="succes.php" method="post" role="form">
+                <form action="" method="post" role="form">
 
                     <div class="form-group">
                     <label for="input-latitude1">Marker 1 latitude:</label>
@@ -76,7 +76,7 @@ include_once('header.php');
                     <textarea name="beschrijving" class="form-control"></textarea>
                     </div>
 
-                    <input type="submit" name="submit" class="btn btn-default">
+                    <input type="submit" name="createSoloEvent" class="btn btn-default">
                 </form>
 
             </div>

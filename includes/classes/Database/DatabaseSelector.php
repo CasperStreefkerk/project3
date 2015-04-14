@@ -152,6 +152,105 @@ class DatabaseSelector extends Database
         return $statement->fetch();
     }
 
+    public function insertMarkers1($location_name, $latitude1, $longitude1, $description, $event_id){
+            $statement = $this->connection->prepare
+            ('INSERT INTO markers (location_name, latitude, longitude, description, event_id)
+VALUES (:location_name, :latitude, :longitude, :description, :event_id)');
+            $statement->execute(array(':location_name'=>$location_name,
+                ':latitude'=>$latitude1,
+                'longitude'=>$longitude1,
+                ':description'=>$description,
+                ':event_id'=>$event_id
+            ));
+        return $this->connection->lastInsertId('markers');
+
+    }
+
+    public function insertMarkers2($location_name, $latitude2, $longitude2, $description, $event_id){
+        $statement = $this->connection->prepare
+        ('INSERT INTO markers (location_name, latitude, longitude, description, event_id)
+VALUES (:location_name, :latitude, :longitude, :description, :event_id)');
+        $statement->execute(array(':location_name'=>$location_name,
+            ':latitude'=>$latitude2,
+            'longitude'=>$longitude2,
+            ':description'=>$description,
+            ':event_id'=>$event_id
+        ));
+        return $this->connection->lastInsertId('markers');
+
+    }
+
+    public function insertMarkers3($location_name, $latitude3, $longitude3, $description, $event_id){
+        $statement = $this->connection->prepare
+        ('INSERT INTO markers (location_name, latitude, longitude, description, event_id)
+VALUES (:location_name, :latitude, :longitude, :description, :event_id)');
+        $statement->execute(array(':location_name'=>$location_name,
+            ':latitude'=>$latitude3,
+            'longitude'=>$longitude3,
+            ':description'=>$description,
+            ':event_id'=>$event_id
+        ));
+        return $this->connection->lastInsertId('markers');
+
+    }
+
+    public function insertMarkers4($location_name, $latitude4, $longitude4, $description, $event_id){
+        $statement = $this->connection->prepare
+        ('INSERT INTO markers (location_name, latitude, longitude, description, event_id)
+VALUES (:location_name, :latitude, :longitude, :description, :event_id)');
+        $statement->execute(array(':location_name'=>$location_name,
+            ':latitude'=>$latitude4,
+            'longitude'=>$longitude4,
+            ':description'=>$description,
+            ':event_id'=>$event_id
+        ));
+        return $this->connection->lastInsertId('markers');
+
+    }
+
+    public function createSoloEvent($name, $description, $artistid, $marker1, $marker2, $marker3, $marker4){
+
+        $statement = $this->connection->prepare
+        ('INSERT INTO solo_events (name, description, artist_id, marker1_id, marker2_id, marker3_id, marker4_id)
+          VALUES (:name,:description,:artistid,:marker1, :marker2, :marker3, :marker4)');
+        $statement->execute(array(':name'=>$name,
+            ':description'=>$description,
+            ':artistid'=>$artistid,
+            'marker1'=>$marker1,
+            'marker2'=>$marker2,
+            'marker3'=>$marker3,
+            'marker4'=>$marker4
+        ));
+
+        //return $lastid = $statement->lastInsertId();
+        return $this->connection->lastInsertId('solo_events');
+
+    }
+
+    public function editSoloEvent($event_id, $marker1_id, $marker2_id, $marker3_id, $marker4_id){
+        $query = "UPDATE solo_events
+                  SET marker1_id = :marker1_id,
+                      marker2_id = :marker2_id,
+                      marker3_id = :marker3_id,
+                      marker4_id = :marker4_id
+                  WHERE solo_events_id = :solo_events_id";
+        $statement = $this->connection->prepare($query);
+        $statement->bindParam(':solo_events_id', $event_id);
+        $statement->bindParam(':marker1_id', $marker1_id);
+        $statement->bindParam(':marker2_id', $marker2_id);
+        $statement->bindParam(':marker3_id', $marker3_id);
+        $statement->bindParam(':marker4_id', $marker4_id);
+
+        $statement->execute();
+
+    }
+
+    public function getEvents(){
+        $query = "SELECT * FROM solo_events";
+
+        return $this->connection->query($query)->fetchAll(\PDO::FETCH_OBJ);
+
+    }
     /**
      * Get all matches
      *

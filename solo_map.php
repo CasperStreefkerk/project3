@@ -2,6 +2,8 @@
 
 include_once('header.php');
 
+//$_SESSION['mapid'] = $_GET['id'];
+//echo $_SESSION['mapid'];
 ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">

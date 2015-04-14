@@ -3,10 +3,10 @@ $password = '';
 $email = '';
 
 if(isset($_POST['submitLogin'])){
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-        $user = $db->loginUser($email, $password);
+    $user = $db->loginUser($email, $password);
     var_dump($user);
 
     if(!$user){

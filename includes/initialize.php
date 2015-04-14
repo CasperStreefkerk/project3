@@ -25,7 +25,8 @@ try {
 
     require_once "ini/ini-index.php";
     require_once "ini/ini-register.php";
-
+    require_once "ini/ini-eventcreate.php";
+    require_once "ini/ini-events.php";
 
 
 

@@ -1,0 +1,3 @@
+<?php
+
+$allevents = $db->getEvents();

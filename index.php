@@ -11,7 +11,11 @@ include_once('header.php');
     <div class="container">
         <h1>Welkom bij Heartbeat!</h1>
         <p>Ontdek samen nieuwe muziek op een leuke manier!</p>
-        <p><a class="btn btn-primary btn-lg" href="register.php" role="button">Registreer nu! &raquo;</a></p>
+        <?php if ($session->keyExists("id")) {
+            ?>
+        <p><a class="btn btn-primary btn-lg" href="event_list.php" role="button">Bekijk nu onze events &raquo;</a></p>
+        <?php } ?>
+
     </div>
 </div>
 
